@@ -4,7 +4,7 @@ namespace Ghasedak;
 
 final readonly class Constants
 {
-    const URL = 'https://gw.ghasedak.me/Rest/api/v1/WebService';
+    const URL = 'https://Gateway.ghasedak.me/Rest/api/v1/WebService';
 
     const SEND_SINGLE = '/SendSingleSMS';
 
