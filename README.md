@@ -42,12 +42,12 @@
   * [Send Bulk](#send-bulk)
   * [Send Pair To Pair](#send-pair-to-pair)
   * [Send OTP](#send-otp)
-  * [Send OTP With Params](#sendotpwithparams)
-  * [Check SMS Status](#checksmsstatus)
-  * [Get Account Information](#getaccountinformation)
-  * [Get Received SMSes](#getreceivedsmses)
-  * [Get Received SMSes Pagination](#getreceivedsmsespagination)
-  * [Get OTP Template Parameters](#getotptemplateparameters)
+  * [Send OTP With Params](#send-otp-with-params)
+  * [Check SMS Status](#check-sms-status)
+  * [Get Account Information](#get-account-information)
+  * [Get Received SMSes](#get-received-smses)
+  * [Get Received SMSes Pagination](#get-received-smses-pagination)
+  * [Get OTP Template Parameters](#get-otp-template-parameters)
 * [Licence](#license)
 
 
