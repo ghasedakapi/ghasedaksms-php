@@ -49,13 +49,17 @@ readonly class GetReceivedSMSesPagingDTO
 
     public function toArray(): array
     {
-        return [
+        $returnArray = [
             'LineNumber' => $this->lineNumber,
-            'IsRead' => $this->isRead,
             'StartDate' => $this->startDate?->format('c'),
             'EndDate' => $this->endDate?->format('c'),
             'PageIndex' => $this->pageIndex,
             'pageSize' => $this->pageSize
         ];
+        if ($this->isRead !== null) {
+            $returnArray['IsRead'] = $this->isRead ? 'true' : 'false';
+        }
+
+        return $returnArray;
     }
 }

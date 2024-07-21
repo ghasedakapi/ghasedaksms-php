@@ -6,7 +6,7 @@ readonly class GetReceivedSMSesDTO
 {
     public function __construct(
         private string $lineNumber,
-        private ?bool   $isRead = null
+        private ?bool  $isRead = null
     )
     {
     }
@@ -23,10 +23,11 @@ readonly class GetReceivedSMSesDTO
 
     public function toArray(): array
     {
-        return [
-            'LineNumber' => $this->lineNumber,
-            'IsRead' => $this->isRead
-        ];
+        $returnArray = ['LineNumber' => $this->lineNumber];
+        if ($this->isRead !== null) {
+            $returnArray['IsRead'] = $this->isRead ? 'true' : 'false';
+        }
+        return $returnArray;
     }
 
 
