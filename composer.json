@@ -1,0 +1,25 @@
+{
+  "name": "ghasedaksms/php",
+  "type": "library",
+  "description": "a package for use ghasedaksms api services in php programming",
+  "keywords": ["ghasedak","ghasedaksms", "sms", "sms-api", "sms-gateway", "notification"],
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Ghasedak\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "mrt",
+      "email": "mortezaei76@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.2",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "minimum-stability" : "stable",
+  "prefer-stable" : true
+}

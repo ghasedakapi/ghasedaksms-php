@@ -1,0 +1,74 @@
+# Composer dependency directory
+/vendor/
+
+# Composer package file
+composer.lock
+
+# PHPStorm project files
+.idea/
+
+# NetBeans project files
+nbproject/
+nbproject/private/
+
+# Symfony directories
+/app/cache/
+/app/logs/
+/var/cache/
+/var/logs/
+/var/sessions/
+
+# Laravel directories
+/node_modules/
+/public/storage
+/public/hot
+/storage/*.key
+.env
+
+# Laravel 4 specific
+bootstrap/compiled.php
+app/storage/
+
+# Laravel 5 & 6 specific
+public/storage
+public/hot
+storage/*.key
+.env.*.php
+.env.php
+Homestead.yaml
+Homestead.json
+.vagrant/
+
+# PHPUnit
+.phpunit.result.cache
+
+# Directories for local environments
+/.vagrant/
+/homestead/
+
+# Log files
+*.log
+
+# Backup files
+*.bak
+
+# Other development environment files
+.env.local
+.env.*.local
+.php-version
+/.env.local.php
+
+# IDE files
+/.phpstorm.meta.php
+/.idea/
+*.iml
+*.iws
+*.ipr
+/.vscode/
+_ide_helper.php
+_ide_helper_models.php
+.phpstorm.meta.php
+/.phpunit.result.cache
+
+# eZ Platform
+/var/cache
