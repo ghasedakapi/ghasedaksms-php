@@ -8,9 +8,15 @@ readonly class OtpItemDTO
         private string $receptor,
         private int    $cost,
         private string $messageId,
+        private ?string $clientReferenceId,
         private string $sendDate
     )
     {
+    }
+
+    public function getClientReferenceId(): string
+    {
+        return $this->clientReferenceId;
     }
 
     public function getReceptor(): string
@@ -39,6 +45,7 @@ readonly class OtpItemDTO
             receptor: $response['receptor'],
             cost: $response['cost'],
             messageId: $response['messageId'],
+            clientReferenceId: $response['clientReferenceId'],
             sendDate: $response['sendDate']
         );
     }

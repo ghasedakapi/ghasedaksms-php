@@ -68,7 +68,8 @@ class GhasedaksmsApi
             CURLOPT_POSTFIELDS => $requestData,
             CURLOPT_HTTPHEADER => array(
                 'Content-Type: application/json',
-                'ApiKey: ' . $this->apikey
+                'ApiKey: ' . $this->apikey,
+                'Agent: Php'
             ),
         ));
 

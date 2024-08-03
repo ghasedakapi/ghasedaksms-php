@@ -8,9 +8,10 @@ readonly class BulkMessageResponseDTO
      * @param array<ReceptorResponseDTO> $receptors
      */
     public function __construct(
-        private array $receptors,
-        private string $lineNumber,
         private int    $cost,
+        private string $lineNumber,
+        private ?string $clientReferenceId,
+        private array  $receptors,
         private string $message,
         private string $sendDate
     )
@@ -20,12 +21,18 @@ readonly class BulkMessageResponseDTO
     public static function fromResponse(array $response): self
     {
         return new self(
-            receptors: array_map(fn(array $item) => ReceptorResponseDTO::fromResponse($item), $response['receptors']),
-            lineNumber: $response['lineNumber'],
             cost: $response['cost'],
+            lineNumber: $response['lineNumber'],
+            clientReferenceId: $response['clientReferenceId'],
+            receptors: array_map(fn(array $item) => ReceptorResponseDTO::fromResponse($item), $response['receptors']),
             message: $response['message'],
             sendDate: $response['sendDate']
         );
+    }
+
+    public function getClientReferenceId(): string
+    {
+        return $this->clientReferenceId;
     }
 
     public function getReceptor(): array

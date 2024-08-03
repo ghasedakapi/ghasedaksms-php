@@ -5,14 +5,33 @@ namespace Ghasedak\DataTransferObjects\Response;
 readonly class SingleMessageResponseDTO
 {
     public function __construct(
-        private string $receptor,
-        private string $lineNumber,
-        private int    $cost,
-        private string $messageId,
-        private string $message,
-        private string $sendDate
+        private string  $lineNumber,
+        private string  $receptor,
+        private string  $messageId,
+        private int     $cost,
+        private ?string $clientReferenceId,
+        private string  $sendDate,
+        private string  $message
     )
     {
+    }
+
+    public static function fromResponse(?array $response): self
+    {
+        return new self(
+            lineNumber: $response['lineNumber'],
+            receptor: $response['receptor'],
+            messageId: $response['messageId'],
+            cost: $response['cost'],
+            clientReferenceId: $response['clientReferenceId'],
+            sendDate: $response['sendDate'],
+            message: $response['message']
+        );
+    }
+
+    public function getClientReferenceId(): string
+    {
+        return $this->clientReferenceId;
     }
 
     public function getReceptor(): string
@@ -43,17 +62,5 @@ readonly class SingleMessageResponseDTO
     public function getSendDate(): string
     {
         return $this->sendDate;
-    }
-
-    public static function fromResponse(?array $response): self
-    {
-        return new self(
-            receptor: $response['receptor'],
-            lineNumber: $response['lineNumber'],
-            cost: $response['cost'],
-            messageId: $response['messageId'],
-            message: $response['message'],
-            sendDate: $response['sendDate']
-        );
     }
 }
