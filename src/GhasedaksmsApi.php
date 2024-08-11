@@ -76,7 +76,7 @@ class GhasedaksmsApi
         $response = curl_exec($curl);
 
         if (curl_errno($curl)) {
-            throw new GhasedakSMSException();
+            throw new GhasedakSMSException(curl_error($curl),curl_errno($curl));
         }
 
         $response = json_decode($response, true);
